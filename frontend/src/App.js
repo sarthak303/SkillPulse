@@ -1,33 +1,34 @@
-import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 // pages & components
-import Home from './pages/Home';
-import Explore from './pages/Explore'; 
-import WorkoutList from './pages/WorkoutList';
-import AddWorkout from './pages/AddWorkout';
-import Navbar from './components/Navbar';
-import ContactUs from './pages/ContactUs';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Footer from './components/Footer';
-import About from './pages/about';
-import Sports from './pages/Sports'; 
+import Home from "./pages/Home";
+import Explore from "./pages/Explore";
+import WorkoutList from "./pages/WorkoutList";
+import AddWorkout from "./pages/AddWorkout";
+import Navbar from "./components/Navbar";
+import ContactUs from "./pages/ContactUs";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Footer from "./components/Footer";
+import About from "./pages/about";
+import Sports from "./pages/Sports";
+import Tennis from "./pages/Tennis";  
 
 function App() {
   const location = useLocation();
 
   useEffect(() => {
     const body = document.body;
-    if (location.pathname === '/explore') {
-      body.classList.add('bg-explore');
-      body.classList.remove('bg-default', 'bg-sports');
-    } else if (location.pathname === '/sports') {
-      body.classList.add('bg-sports');
-      body.classList.remove('bg-default', 'bg-explore');
+    if (location.pathname === "/explore") {
+      body.classList.add("bg-explore");
+      body.classList.remove("bg-default", "bg-sports");
+    } else if (location.pathname === "/sports") {
+      body.classList.add("bg-sports");
+      body.classList.remove("bg-default", "bg-explore");
     } else {
-      body.classList.add('bg-default');
-      body.classList.remove('bg-explore', 'bg-sports');
+      body.classList.add("bg-default");
+      body.classList.remove("bg-explore", "bg-sports");
     }
   }, [location]);
 
@@ -37,7 +38,7 @@ function App() {
       <div className="pages">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/explore" element={<Explore />} /> 
+          <Route path="/explore" element={<Explore />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/contact" element={<ContactUs />} />
@@ -45,6 +46,7 @@ function App() {
           <Route path="/workouts" element={<WorkoutList />} />
           <Route path="/add-workout" element={<AddWorkout />} />
           <Route path="/sports" element={<Sports />} />
+          <Route path="/sports/tennis" element={<Tennis />} />
         </Routes>
       </div>
       {/* <Footer /> */}
