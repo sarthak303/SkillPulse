@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="container">
-        <p>&copy; 2024 FLEX FUSION. All rights reserved.</p>
+        <p>&copy; 2024 Workout Buddy. All rights reserved.</p>
         <div className="social-icons">
           <a href="https://mail.google.com/mail/u/0/#inbox">
             <img src={gmailIcon} alt="Gmail" />

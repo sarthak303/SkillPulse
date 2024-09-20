@@ -5,15 +5,17 @@ const about = () => {
     <div className="about-me">
       <h2>About Me</h2>
       <p>
-        Hi there! My name is Prakhar Agrawal and I'm a Student at VIT, Vellore.
-        I enjoy coding and listening to music, and I'm passionate about machine learning.
+        Hi there! My name is [Your Name] and I'm a [Your Profession or Role].
+        I enjoy [Your Interests or Hobbies], and I'm passionate about [Your Passion or Interest].
+        I have [X] years of experience in [Your Field].
       </p>
       <p>
-        In my free time, I like to play cricket or video games, and I also enjoy making ml models.
+        In my free time, I like to [Your Activities or Hobbies], and I also enjoy [Other Interests].
+        I'm always eager to [Your Goals or Aspirations].
       </p>
       <p>
-        Feel free to reach out to me at prakhar.agra10@gmail.com for any inquiries or collaborations.
-        You can also connect with me on www.linkedin.com/in/prakhar-agrawal-625398286 or 9019791569.
+        Feel free to reach out to me at [Your Email Address] for any inquiries or collaborations.
+        You can also connect with me on [Your Social Media Profiles].
       </p>
     </div>
   );

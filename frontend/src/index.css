@@ -106,7 +106,7 @@ nav {
   display: flex;
   align-items: center;
 }
-nav a, nav button {
+nav a {
   margin-left: 10px;
 }
 nav button {
@@ -127,26 +127,4 @@ form.signup, form.login {
   padding: 20px;
   background: #fff;
   border-radius: 4px;
-}
-
-.contact-us{
-  background-color: beige;
-  color: black;
-  font-weight: bold;
-  border-radius: 9px;
-  margin: 10px;
-  overflow: auto; /* Enable scrolling */
-  max-height: 400px; 
-  padding: 10px;
-}
-
-.about-me{
-  background-color: beige;
-  color: black;
-  font-weight: bold;
-  border-radius: 9px;
-  margin: 10px;
-  overflow: auto; /* Enable scrolling */
-  max-height: 400px; 
-  padding: 10px;
 }
