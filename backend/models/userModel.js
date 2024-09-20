@@ -14,7 +14,9 @@ const userSchema = new Schema({
     type: String,
     required: true
   }
-})
+}, {
+  timestamps: true // Adds createdAt and updatedAt fields
+});
 
 // static signup method
 userSchema.statics.signup = async function(email, password) {
@@ -64,4 +66,29 @@ userSchema.statics.login = async function(email, password) {
   return user
 }
 
-module.exports = mongoose.model('User', userSchema)
+
+// static updatePassword method
+userSchema.statics.updatePassword = async function(email, newPassword) {
+  // validation
+  if (!email || !newPassword) {
+    throw Error('All fields must be filled')
+  }
+
+  const user = await this.findOne({ email })
+  if (!user) {
+    throw Error('User not found')
+  }
+
+  // Hash new password
+  const salt = await bcrypt.genSalt(10)
+  const hashedPassword = await bcrypt.hash(newPassword, salt)
+
+  // Update password and save
+  user.password = hashedPassword
+  await user.save()
+
+  return user
+}
+
+
+module.exports = mongoose.model('Usertest', userSchema)

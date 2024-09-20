@@ -1,0 +1,11 @@
+.wrapper {
+    border: 2px solid white;
+    background-color: black;
+    padding: 20px;
+    min-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.add-workout {
+    color: white;
+}

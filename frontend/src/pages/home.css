@@ -1,0 +1,132 @@
+body {
+    background-color: #484545; 
+    color: #fff; 
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden; 
+    background-image: url('../assets/logo.jpg');
+  }
+  
+  .home1 {
+    padding: 2rem;
+  }
+  
+  .intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0; 
+    animation: slideInLeft 1s forwards; 
+    
+  }
+  
+  .intro h1{
+    color: black;
+
+  }
+
+  .description p{
+    color: black;
+  }
+
+  .description {
+    text-align: center;
+    opacity: 0; 
+    animation: slideInRight 1s forwards; 
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    opacity: 0; 
+    animation: fadeIn 1s forwards;
+  }
+  
+  .btn {
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin: 0 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-5px); 
+  }
+
+ 
+
+ 
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .featured-workouts {
+    display: inline-block; /* Display the element inline */
+    float: right;
+    vertical-align: top; /* Align the element to the top of its container */
+    width: 250px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  
+  
+  .scroll-box {
+    padding: 10px;
+    overflow-y: auto;
+    height: 100%;
+  }
+  
+  .scroll-box p {
+    margin: 0;
+    padding: 5px 0;
+  }
+/* Inside home.css */
+.workout-item {
+  margin-bottom: 20px;
+}
+
+.workout-item h3 {
+  margin-top: 0;
+}
+
+.workout-item p {
+  margin-bottom: 0;
+}
+  

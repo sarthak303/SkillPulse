@@ -1,0 +1,56 @@
+header {
+    background-color: beige; 
+    color: #000; 
+    padding: 0.5rem 0; 
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  img {
+    height: 40px;
+    width: 300px;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links > div {
+    margin-left: auto;
+  }
+  
+  .nav-btn {
+    background-color: #264f0b;
+    color: #ffffff;
+    border: none;
+    padding: 0.25rem 0.75rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    font-size: 0.9rem; 
+  }
+  
+  .nav-btn:hover {
+    background-color: #1b3a07;
+  }
+
+  .logoname{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    
+    
+  }
+  

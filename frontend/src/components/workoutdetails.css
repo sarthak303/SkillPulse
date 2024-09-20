@@ -1,0 +1,26 @@
+.workout-details {
+    background-color: #f4f4f4; 
+    color: #333; 
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+
+  }
+  
+  .workout-details h4 {
+    margin-top: 0;
+  }
+  
+  .workout-details p {
+    margin: 0.5rem 0;
+  }
+  
+  .workout-details span {
+    color: #ff0000; 
+    cursor: pointer;
+  }
+  
+  .workout-details span:hover {
+    text-decoration: underline;
+  }
+  

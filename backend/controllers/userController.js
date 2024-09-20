@@ -37,4 +37,27 @@ const signupUser = async (req, res) => {
   }
 }
 
-module.exports = { signupUser, loginUser }
+// update password
+const updatePassword = async (req, res) => {
+  const {email, password} = req.body
+
+  try {
+    // Find the user by email
+    const user = await User.findOne({email})
+    if (!user) {
+      throw new Error('User not found')
+    }
+
+    // Update the password
+    await User.updatePassword(email, password)
+
+    // create a token
+    const token = createToken(user._id)
+
+    res.status(200).json({email, token})
+  } catch (error) {
+    res.status(400).json({error: error.message})
+  }
+}
+
+module.exports = { signupUser, loginUser, updatePassword }
