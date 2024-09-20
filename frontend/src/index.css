@@ -8,14 +8,33 @@
 }
 
 body {
-  background-image: url('./assets/bg.png'); /* Background image for the entire body */
-  background-size: cover; /* Ensure it covers the entire viewport */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent repetition */
   margin: 0;
   font-family: "Poppins";
   color: #fff; /* Default text color */
+  overflow: hidden;
 }
+
+body.bg-default {
+  background-image: url('./assets/bg.png'); /* Default background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body.bg-explore {
+  background-image: url('./assets/bg2.png'); /* Explore page background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body.bg-sports {
+  background-image: url('./assets/bg3.jpg'); /* Sports page background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 header {
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for Navbar */

@@ -41,7 +41,7 @@ const Home = () => {
             <button className="btn-explore" onClick={handleExploreClick}>Explore</button> {/* Update this button */}
           </div>
           <div>
-            <Link to="/add-workout">
+            <Link to="/sports">
               <button className="btn-analyse">Analyse</button>
             </Link>
           </div>

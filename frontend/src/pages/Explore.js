@@ -30,7 +30,9 @@ const Explore = () => {
         </p>
       </div>
       <div className="button-container1">
-        <button className="btn-explore1">Get Started</button>
+        <Link to="/sports">
+          <button className="btn-explore1">Get Started</button>
+        </Link>
         <Link to="/">
           <button className="btn-analyse1">Return to Homepage</button>
         </Link>

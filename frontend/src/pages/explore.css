@@ -67,14 +67,19 @@
   border: 2px solid grey; /* Button outline color */
   background-color: white; /* Button background color */
   color: grey; /* Text color inside buttons */
-  border-radius: 50%; /* Circular edges */
-  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Adjust to create rounded edges */
+  padding: 10px; /* Adjust padding for better spacing */
   margin: 5px; /* Space between buttons */
   cursor: pointer;
   font-size: 16px; /* Font size */
   transition: background-color 0.3s ease; /* Smooth transition */
+  width: 170px; /* Increased width for more elongation */
+  height: 50px; /* Height remains the same */
 }
 
 .btn-explore1:hover, .btn-analyse1:hover {
   background-color: lightgrey; /* Change background on hover */
 }
+
+
+
