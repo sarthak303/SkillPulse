@@ -1,82 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 body {
-    background-color: #000; 
-    color: #fff; 
-    margin: 0; 
-    padding: 0; 
-    overflow-x: hidden; 
+  background: url('../assets/bg.png') no-repeat center top;
+  background-size: cover;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.home1 {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center vertically */
+  align-items: flex-start; /* Align items to the left */
+}
+
+.heading-container {
+  width: 554px; /* Set width */
+  height: 264px; /* Set height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add padding */
+  border-radius: 10px; /* Optional: rounded corners */
+  margin-top: -275px; /* Space below heading */
+}
+
+.heading {
+  font-family: 'Silkscreen', cursive;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 46.32px;
+  text-align: left;
+  animation: slideInRight 1s backwards;
+  color: black;
+}
+
+.description-container {
+  width: 554px; /* Match width of heading */
+  padding: 20px; /* Add padding */
+  border-radius: 10px; /* Optional: rounded corners */
+  margin-top: -70px; /* Space below description */
+}
+
+.description {
+  font-size: 14.1px; /* Adjust font size as needed */
+  line-height: 24px; /* Adjust line height for readability */
+  text-align: left;
+  opacity: 0;
+  animation: slideInRight 1s forwards;
+  color: black;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.btn-explore {
+  border: none; /* Remove border */
+  border-radius: 5px;
+  padding: 0.7rem 4rem; /* Increase horizontal padding */
+  font-size: 1rem;
+  margin: 0 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition */
+  background-color: #FD7642; /* Button background color for Explore */
+  color: white; /* Button text color */
+  text-align: center; /* Center the text */
+}
+
+.btn-analyse {
+  border: none; /* Remove border */
+  border-radius: 5px;
+  padding: 0.7rem 4rem; /* Increase horizontal padding */
+  font-size: 1rem;
+  margin: 0 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition */
+  background-color: black; /* Button background color for Analyse */
+  color: white; /* Button text color */
+  text-align: center; /* Center the text */
+}
+
+
+
+.btn-explore:hover, .btn-analyse:hover {
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-5px);
+}
+
+/* Keyframes for animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
   }
-  
-  .home1 {
-    padding: 2rem;
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .intro {
-    text-align: center;
-    margin-bottom: 2rem;
-    opacity: 0; 
-    animation: slideInLeft 1s forwards; 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .description {
-    text-align: center;
-    opacity: 0; 
-    animation: slideInRight 1s forwards; 
+  to {
+    opacity: 1;
   }
-  
-  .buttons {
-    display: flex;
-    justify-content: center;
-    opacity: 0; 
-    animation: fadeIn 1s forwards;
-  }
-  
-  .btn {
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    margin: 0 1rem;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  
-  .btn:hover {
-    background-color: #fff;
-    color: #000;
-    transform: translateY(-5px); 
-  }
-  
-  @keyframes slideInLeft {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideInRight {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
+}

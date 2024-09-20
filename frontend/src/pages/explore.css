@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+.explore-container {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+}
+
+.heading-container {
+  width: 554px; /* Set width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 1rem; /* Space below heading */
+}
+
+.heading {
+  font-family: 'Silkscreen', cursive;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 46.32px;
+  text-align: left;
+}
+
+.sub-heading {
+  font-family: 'Silkscreen', cursive; /* Same font */
+  font-size: 30px; /* Slightly smaller than main heading */
+  font-weight: 600; /* Slightly lighter */
+  margin: 1rem 0; /* Space around subheading */
+}
+
+.description-container {
+  width: 554px; /* Match width of heading */
+  padding: 20px;
+  margin-bottom: 2rem; /* Space below description */
+}
+
+.description {
+  font-family: 'Silkscreen', cursive; /* Same font as heading */
+  font-size: 20px; /* Adjust font size */
+  line-height: 24px; /* Adjust line height for readability */
+  text-align: left;
+}

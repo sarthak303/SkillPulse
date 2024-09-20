@@ -1,18 +1,18 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // pages & components
-import Home from './pages/Home'
-import WorkoutList from './pages/WorkoutList'
-import AddWorkout from './pages/AddWorkout'
-import Navbar from './components/Navbar'
-import ContactUs from './pages/ContactUs'
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-import Footer from './components/Footer'
-import About from './pages/about'
+import Home from './pages/Home';
+import Explore from './pages/Explore'; // Import Explore
+import WorkoutList from './pages/WorkoutList';
+import AddWorkout from './pages/AddWorkout';
+import Navbar from './components/Navbar';
+import ContactUs from './pages/ContactUs';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Footer from './components/Footer';
+import About from './pages/about';
 
 function App() {
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -20,6 +20,7 @@ function App() {
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/explore" element={<Explore />} /> 
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/contact" element={<ContactUs />} />
@@ -28,8 +29,7 @@ function App() {
             <Route path="/add-workout" element={<AddWorkout />} />
           </Routes>
         </div>
-        <Footer />
-
+        {/* <Footer /> */}
       </BrowserRouter>
     </div>
   );
