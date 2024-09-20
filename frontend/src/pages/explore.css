@@ -61,6 +61,7 @@
 .button-container1 {
   display: flex; /* Change to flexbox for horizontal alignment */
   justify-content: flex-start; /* Align buttons to the start */
+  gap: 20px; /* Add space between buttons */
 }
 
 .btn-explore1, .btn-analyse1 {
@@ -80,6 +81,3 @@
 .btn-explore1:hover, .btn-analyse1:hover {
   background-color: lightgrey; /* Change background on hover */
 }
-
-
-

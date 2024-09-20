@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
-body {
-  background: url('../assets/bg.png') no-repeat center top;
-  background-size: cover;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
 
 .home1 {
   padding: 4rem 2rem;
@@ -26,7 +18,7 @@ body {
   align-items: center;
   padding: 20px; /* Add padding */
   border-radius: 10px; /* Optional: rounded corners */
-  margin-top: -275px; /* Space below heading */
+  margin-top: -200px; /* Space below heading */
 }
 
 .heading {
@@ -43,7 +35,7 @@ body {
   width: 554px; /* Match width of heading */
   padding: 20px; /* Add padding */
   border-radius: 10px; /* Optional: rounded corners */
-  margin-top: -70px; /* Space below description */
+  margin-top: 0.1px; /* Space below description */
 }
 
 .description {
@@ -123,3 +115,4 @@ body {
     opacity: 1;
   }
 }
+

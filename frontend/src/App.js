@@ -4,8 +4,6 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 // pages & components
 import Home from './pages/Home';
 import Explore from './pages/Explore'; 
-import WorkoutList from './pages/WorkoutList';
-import AddWorkout from './pages/AddWorkout';
 import Navbar from './components/Navbar';
 import ContactUs from './pages/ContactUs';
 import Login from './pages/Login';
@@ -42,8 +40,6 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<About />} />
-          <Route path="/workouts" element={<WorkoutList />} />
-          <Route path="/add-workout" element={<AddWorkout />} />
           <Route path="/sports" element={<Sports />} />
         </Routes>
       </div>

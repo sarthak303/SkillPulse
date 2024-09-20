@@ -1,29 +1,31 @@
-.sports-container {
+.sports-page {
   display: flex;
-  justify-content: space-between; /* Evenly space the cards */
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflow to create a clean look */
+  height: 100vh; /* Full viewport height */
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden; /* Prevent overflow from showing */
+}
+
+.carousel {
+  display: flex; /* Flex layout for horizontal alignment */
 }
 
 .sport-card {
-  width: 282px; /* Set width of the card */
+  min-width: 282px; /* Set minimum width for the card */
   height: 495px; /* Set height of the card */
   text-align: center;
-  transition: transform 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.8); /* Optional: add a background */
-  border-radius: 10px; /* Optional: add rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow */
-}
-
-.sport-card:hover {
-  transform: translateY(-5px); /* Move the card up on hover */
+  margin-right: 16px; /* Space between cards */
 }
 
 .sport-image {
   width: 100%;
   height: 70%; /* Adjust height to fit in the card */
   object-fit: cover; /* Ensure the image covers the area */
-  border-top-left-radius: 10px; /* Match rounded corners */
-  border-top-right-radius: 10px; /* Match rounded corners */
 }
 
 .sport-title {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './explore.css';
+import DottedButton from './DottedButton'; // Import your DottedButton component
 
 const Explore = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,10 +32,10 @@ const Explore = () => {
       </div>
       <div className="button-container1">
         <Link to="/sports">
-          <button className="btn-explore1">Get Started</button>
+          <DottedButton text="Get Started" />
         </Link>
         <Link to="/">
-          <button className="btn-analyse1">Return to Homepage</button>
+          <DottedButton text="Return to Home" />
         </Link>
       </div>
     </div>
