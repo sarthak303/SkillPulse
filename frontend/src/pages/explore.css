@@ -1,46 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-
-.explore-container {
+.explore-container1 {
   padding: 4rem 2rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align items to the left */
+  align-items: flex-start;
+  padding-top: 6rem; /* Added padding to move everything lower */
+  color: black; /* Default text color */
+  opacity: 0; /* Start hidden for fade-in */
+  transition: opacity 0.5s ease-in; /* Fade-in transition */
 }
 
-.heading-container {
-  width: 554px; /* Set width */
+.explore-container1.fade-in {
+  opacity: 1; /* Fade in effect */
+}
+
+.heading-container1 {
+  width: 554px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin-bottom: 1rem; /* Space below heading */
+  margin-bottom: 1rem;
 }
 
-.heading {
+.heading1 {
   font-family: 'Silkscreen', cursive;
   font-size: 40px;
   font-weight: 700;
+}
+
+.sub-heading1 {
+  font-family: 'Silkscreen', cursive;
+  font-size: 30px;
+  font-weight: 700;
   line-height: 46.32px;
   text-align: left;
+  margin-top: -200px;
 }
 
-.sub-heading {
-  font-family: 'Silkscreen', cursive; /* Same font */
-  font-size: 30px; /* Slightly smaller than main heading */
-  font-weight: 600; /* Slightly lighter */
-  margin: 1rem 0; /* Space around subheading */
-}
-
-.description-container {
-  width: 554px; /* Match width of heading */
-  padding: 20px;
-  margin-bottom: 2rem; /* Space below description */
-}
-
-.description {
-  font-family: 'Silkscreen', cursive; /* Same font as heading */
-  font-size: 20px; /* Adjust font size */
-  line-height: 24px; /* Adjust line height for readability */
+.sub-heading-small1 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 46.32px;
   text-align: left;
+  margin-top: -100px;
+}
+
+.description-container1 {
+  width: 554px;
+  padding: 20px;
+  margin-bottom: 2rem;
+}
+
+.description-small1 {
+  font-size: 14px; /* Smaller description text */
+  line-height: 24px;
+  text-align: left;
+}
+
+.button-container1 {
+  display: flex; /* Change to flexbox for horizontal alignment */
+  justify-content: flex-start; /* Align buttons to the start */
+}
+
+.btn-explore1, .btn-analyse1 {
+  border: 2px solid grey; /* Button outline color */
+  background-color: white; /* Button background color */
+  color: grey; /* Text color inside buttons */
+  border-radius: 50%; /* Circular edges */
+  padding: 10px 20px; /* Adjust padding as needed */
+  margin: 5px; /* Space between buttons */
+  cursor: pointer;
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-explore1:hover, .btn-analyse1:hover {
+  background-color: lightgrey; /* Change background on hover */
 }

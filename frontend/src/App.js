@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // pages & components
 import Home from './pages/Home';
-import Explore from './pages/Explore'; // Import Explore
+import Explore from './pages/Explore'; 
 import WorkoutList from './pages/WorkoutList';
 import AddWorkout from './pages/AddWorkout';
 import Navbar from './components/Navbar';
