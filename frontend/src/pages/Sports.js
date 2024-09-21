@@ -86,6 +86,8 @@ const HorizontalScrollCarousel = ({ sportsData }) => {
           </div>
         ))}
       </motion.div>
+
+          
     </div>
   );
 };
