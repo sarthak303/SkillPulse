@@ -1,25 +1,21 @@
 import React from "react";
-
+import "./contactus.css"; 
 const ContactUs = () => {
   return (
     <div className="contact-us">
-      <h2>Contact Us</h2>
-      <p>If you have any questions or feedback, feel free to reach out to us:</p>
-      <ul>
-        <li>Email: example@example.com</li>
-        <li>Phone: +1234567890</li>
-        <li>Address: 123 Example St, City, Country</li>
-      </ul>
-      <p>You can also fill out the form below:</p>
-      <form>
-        <label>Name:</label>
-        <input type="text" placeholder="Your Name" />
-        <label>Email:</label>
-        <input type="email" placeholder="Your Email" />
-        <label>Message:</label>
-        <textarea rows="4" placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+      <div className="form-container">
+        <iframe
+          src="https://forms.gle/53dKfzcS3KrYgXg37"
+          width="950"
+          height="400"
+          frameBorder="0"
+          marginHeight="0"
+          marginWidth="0"
+          title="Contact Form"
+        >
+          Loading…
+        </iframe>
+      </div>
     </div>
   );
 };
