@@ -12,6 +12,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.static('output_videos')); // Serve processed videos from the output_videos directory
+app.use(express.json()); // Middleware to parse JSON body
 
 // Ensure the directories exist
 const ensureDirectoryExists = async (dir) => {
@@ -40,32 +41,47 @@ const upload = multer({ storage: storage });
 // Promisified exec for easier async/await usage
 const execAsync = promisify(exec);
 
-// POST route to handle video upload and processing
-app.post('/api/evaluate-video', upload.single('video'), async (req, res) => {
-  const inputVideoPath = `input_videos/${req.file.filename}`; // Use the uploaded filename
-  const outputVideoPath = `output_videos/output_video.avi`; // Maintain naming consistency
+// POST route to handle basketball predictions
+app.post('/api/predict-shot', async (req, res) => {
+  const shotData = req.body;
 
-  console.log(`Processing video: ${inputVideoPath}`);
+  // Validate input
+  if (!shotData) {
+    return res.status(400).json({ error: 'No shot data provided' });
+  }
 
   try {
-    // Execute the Python script with the input and output paths
-    const { stdout, stderr } = await execAsync(`python main.py ${inputVideoPath} ${outputVideoPath}`);
+    // Write shot data to data.json
+    const shotDataFile = 'data.json';
+    await fsPromises.writeFile(shotDataFile, JSON.stringify(shotData));
+
+    // Execute the basketball prediction script
+    const command = `python basketball.py ${shotDataFile}`;
+    
+    // Log the command for debugging
+    console.log(`Executing command: ${command}`);
+
+    const { stdout, stderr } = await execAsync(command);
+    
+    // Check for stderr but do not return an error if it's just warnings
     console.log(`Python stdout: ${stdout}`);
-    if (stderr) {
+    if (stderr && !stderr.includes('Warning')) {
       console.error(`Python stderr: ${stderr}`);
+      return res.status(500).json({ error: 'Error during shot prediction.' });
     }
 
-    // Check if output file exists
-    await fsPromises.access(outputVideoPath, fs.constants.F_OK);
+    // Parse the result from stdout
+    const predictionResult = JSON.parse(stdout);
 
-    console.log(`Processed video successfully: ${outputVideoPath}`);
-
-    // Send back the path to the processed video
-    res.json({ processedVideoPath: outputVideoPath });
+    // Send the prediction result back to the client
+    res.json(predictionResult);
 
   } catch (error) {
-    console.error(`Error processing video: ${error.message || error}`);
-    res.status(500).json({ error: 'Video processing failed' });
+    console.error(`Error processing shot prediction: ${error.message || error}`);
+    res.status(500).json({ error: 'Shot prediction failed' });
+  } finally {
+    // Clean up the temporary file if needed
+    await fsPromises.unlink('data.json').catch(() => {});
   }
 });
 

@@ -56,6 +56,7 @@ function App() {
           <Route path="/sports/football" element={<Football />} />
           <Route path="/sports/tennis" element={<Tennis />} />
           <Route path="/sports/badminton" element={<Badminton />} />
+          <Route path="/sports/basketball" element={<Basketball />} />
 
   </Routes>
       </div>
