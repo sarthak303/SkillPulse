@@ -11,6 +11,11 @@ import Signup from './pages/Signup';
 import Footer from './components/Footer';
 import About from './pages/about';
 import Sports from './pages/Sports'; 
+import Tennis from "./pages/Tennis";
+import Cricket from "./pages/Cricket";
+import Football from "./pages/Football";
+import Badminton from "./pages/Badminton";
+
 
 function App() {
   const location = useLocation();
@@ -46,7 +51,12 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<About />} />
           <Route path="/sports" element={<Sports />} />
-        </Routes>
+          <Route path="/sport/cricket" element={<Cricket />} />
+          <Route path="/sport/football" element={<Football />} />
+          <Route path="/sport/tennis" element={<Tennis />} />
+          <Route path="/sport/badminton" element={<Badminton />} />
+
+  </Routes>
       </div>
       {/* <Footer /> */}
     </div>
