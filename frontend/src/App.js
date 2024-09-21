@@ -12,10 +12,12 @@ import Footer from './components/Footer';
 import About from './pages/about';
 import Sports from './pages/Sports'; 
 import Tennis from "./pages/Tennis.js";
+import Tennis1 from "./pages/Tennis1.js";
 import Cricket from "./pages/Cricket.js";
 import Football from "./pages/Football.js";
 import Badminton from "./pages/Badminton.js";
 import Basketball from "./pages/Basketball.js";
+
 
 
 function App() {
@@ -31,7 +33,13 @@ function App() {
     } else if (path === "/sports") {
       body.classList.add("bg-sports");
       body.classList.remove("bg-default", "bg-explore", "bg4");
-    } else if (["/login", "/signup", "/contact", "/about", "/faq"].includes(path)) {
+    }
+      else if (path === "/sports/tennis1"){
+        body.classList.remove("bg-default", "bg-explore", "bg4");
+
+      }
+
+    else if (["/login", "/signup", "/contact", "/about", "/faq"].includes(path)) {
       body.classList.add("bg4");
       body.classList.remove("bg-default", "bg-explore", "bg-sports");
     } else {
@@ -54,9 +62,9 @@ function App() {
           <Route path="/sports" element={<Sports />} />
           <Route path="/sports/cricket" element={<Cricket />} />
           <Route path="/sports/football" element={<Football />} />
-          <Route path="/sports/tennis" element={<Tennis />} />
+          <Route path="/sports/tennis1" element={<Tennis1 />} />
+          <Route path="/sports/tennis1/tennis" element={<Tennis />} />
           <Route path="/sports/badminton" element={<Badminton />} />
-          <Route path="/sports/basketball" element={<Basketball />} />
 
   </Routes>
       </div>
@@ -65,4 +73,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;
