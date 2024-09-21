@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 // pages & components
 import Home from './pages/Home';
@@ -17,15 +17,15 @@ function App() {
 
   useEffect(() => {
     const body = document.body;
-    if (location.pathname === '/explore') {
-      body.classList.add('bg-explore');
-      body.classList.remove('bg-default', 'bg-sports');
-    } else if (location.pathname === '/sports') {
-      body.classList.add('bg-sports');
-      body.classList.remove('bg-default', 'bg-explore');
+    if (location.pathname === "/explore") {
+      body.classList.add("bg-explore");
+      body.classList.remove("bg-default", "bg-sports");
+    } else if (location.pathname === "/sports") {
+      body.classList.add("bg-sports");
+      body.classList.remove("bg-default", "bg-explore");
     } else {
-      body.classList.add('bg-default');
-      body.classList.remove('bg-explore', 'bg-sports');
+      body.classList.add("bg-default");
+      body.classList.remove("bg-explore", "bg-sports");
     }
   }, [location]);
 
@@ -35,7 +35,7 @@ function App() {
       <div className="pages">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/explore" element={<Explore />} /> 
+          <Route path="/explore" element={<Explore />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/contact" element={<ContactUs />} />
