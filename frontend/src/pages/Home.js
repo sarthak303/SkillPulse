@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { Link } from "react-router-dom"; // Import Link for the Analyse button
 import "./home.css";
-import Explore from "./Explore"; // Ensure the path is correct
-
 
 const Home = () => {
   const [showButtons, setShowButtons] = useState(false);
@@ -49,6 +47,7 @@ const Home = () => {
           </div>
         </div>
       )}
+      {/* <Explore /> */}
     </div>
   );
 };

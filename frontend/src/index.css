@@ -1,4 +1,3 @@
-/* google font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 @tailwind base;
@@ -39,6 +38,12 @@ body.bg-sports {
   background-repeat: no-repeat;
 }
 
+body.bg4 {
+  background-image: url('./assets/bg4.jpg'); /* Background for login, signup, contact, about, and FAQ pages */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 header {
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for Navbar */

@@ -17,15 +17,20 @@ function App() {
 
   useEffect(() => {
     const body = document.body;
-    if (location.pathname === "/explore") {
+    const path = location.pathname;
+
+    if (path === "/explore") {
       body.classList.add("bg-explore");
-      body.classList.remove("bg-default", "bg-sports");
-    } else if (location.pathname === "/sports") {
+      body.classList.remove("bg-default", "bg-sports", "bg4");
+    } else if (path === "/sports") {
       body.classList.add("bg-sports");
-      body.classList.remove("bg-default", "bg-explore");
+      body.classList.remove("bg-default", "bg-explore", "bg4");
+    } else if (["/login", "/signup", "/contact", "/about", "/faq"].includes(path)) {
+      body.classList.add("bg4");
+      body.classList.remove("bg-default", "bg-explore", "bg-sports");
     } else {
       body.classList.add("bg-default");
-      body.classList.remove("bg-explore", "bg-sports");
+      body.classList.remove("bg-explore", "bg-sports", "bg4");
     }
   }, [location]);
 
