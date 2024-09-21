@@ -3,15 +3,14 @@ import json
 import numpy as np
 import pandas as pd
 import joblib
-from sklearn.ensemble import GradientBoostingClassifier
 
 # Load the pre-trained logistic regression model
-model_path = 'logistic_model.pkl'
-logistic_model = joblib.load(model_path)
+logistic_model_path = 'logistic_model.pkl'
+logistic_model = joblib.load(logistic_model_path)
 
-# Initialize and train the Gradient Boosting Classifier (if necessary)
-gb = GradientBoostingClassifier()
-gb.fit(np.random.rand(1000, 10), np.random.randint(2, size=1000))
+# Load the pre-trained Gradient Boosting Classifier model
+gb_model_path = 'gb_model.pkl'
+gb = joblib.load(gb_model_path)
 
 def predict_shot(input_data):
     df = pd.DataFrame([input_data])
