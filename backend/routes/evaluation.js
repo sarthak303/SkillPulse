@@ -1,34 +1,35 @@
 const express = require('express');
-const multer = require('multer');
 const router = express.Router();
+const multer = require('multer');
+const { spawn } = require('child_process');
 
-// Set up multer storage to save uploaded files
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/'); // Folder to save uploaded files
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + '-' + file.originalname); // Save file with timestamp and original name
-    }
-});
+// Configure multer for file uploads
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
-const upload = multer({ storage: storage });
+// Route for evaluating stance
+router.post('/evaluate-stance', upload.single('image'), (req, res) => {
+  if (!req.file) {
+    return res.status(400).send('No image uploaded.');
+  }
 
-// Endpoint to handle image evaluation
-router.post('/evaluate-image', upload.single('image'), (req, res) => {
-    if (!req.file) {
-        return res.status(400).json({ error: 'No file uploaded.' });
-    }
+  // Call Python script for stance evaluation
+  const pythonProcess = spawn('python3', ['../scripts/evaluate_stance.py']);  // Adjust path as needed
+  
+  // Send the image data to Python process
+  pythonProcess.stdin.write(req.file.buffer);
+  pythonProcess.stdin.end();
 
-    // Get the path of the uploaded file
-    const filePath = req.file.path;
-
-    // Here you would add the logic to evaluate the uploaded image.
-    // For demonstration, we'll return a dummy evaluation result.
-    const result = `Evaluation completed for file: ${req.file.originalname} (Path: ${filePath})`;
-
-    // Send back the evaluation result
+  // Collect output from the Python process
+  pythonProcess.stdout.on('data', (data) => {
+    const result = data.toString();
     res.json({ result });
+  });
+
+  pythonProcess.stderr.on('data', (data) => {
+    console.error(`Error: ${data}`);
+    res.status(500).send('Error processing image.');
+  });
 });
 
 module.exports = router;
