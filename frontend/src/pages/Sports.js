@@ -12,6 +12,7 @@ const Sports = () => {
     { id: 2, title: 'Football', image: require('../assets/sport2.png'), route: '/sports/football' },
     { id: 3, title: 'Tennis', image: require('../assets/sport3.png'), route: '/sports/tennis' },
     { id: 4, title: 'Cricket', image: require('../assets/sport4.png'), route: '/sports/cricket' },
+    { id: 5, title: 'Basketball', image: require('../assets/sport5.jpg'), route: '/sports/basketball' },
   ];
 
   return (
@@ -35,7 +36,7 @@ const HorizontalScrollCarousel = ({ sportsData }) => {
             repeat: Infinity,
             repeatType: "loop",
             ease: "linear",
-            duration: 15,
+            duration: 5,
           },
         },
       });

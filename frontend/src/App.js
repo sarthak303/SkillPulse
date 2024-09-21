@@ -15,6 +15,7 @@ import Tennis from "./pages/Tennis.js";
 import Cricket from "./pages/Cricket.js";
 import Football from "./pages/Football.js";
 import Badminton from "./pages/Badminton.js";
+import Basketball from "./pages/Basketball.js";
 
 
 function App() {
