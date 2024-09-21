@@ -29,7 +29,7 @@ const Cricket = () => {
             }
 
             const data = await response.json();
-            setResult(`Result: ${data.result}`);
+            setResult(`Stance: ${data.result} (Angle: ${data.angle.toFixed(2)} degrees)`);
         } catch (error) {
             console.error('Error:', error);
             setResult('Error in evaluation.');
@@ -41,10 +41,14 @@ const Cricket = () => {
             <h1>Cricket</h1>
             <p>Learn about Cricket</p>
             <form onSubmit={handleSubmit}>
-                <input type="file" accept="image/jpeg, image/png, image/jpg" onChange={handleImageChange} required/>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" onChange={handleImageChange} required />
                 <button type="submit">Upload Image</button>
             </form>
-            {result && <div>{result}</div>}
+            {result && (
+                <div style={{ marginTop: '20px', fontSize: '1.2em', fontWeight: 'bold' }}>
+                    {result}
+                </div>
+            )}
         </div>
     );
 };

@@ -1,38 +1,34 @@
 const express = require('express');
 const multer = require('multer');
-const { spawn } = require('child_process');
-const path = require('path');
-
 const router = express.Router();
-const upload = multer({ dest: 'uploads/' }); // Directory for uploaded files
 
-// Endpoint for stance evaluation
+// Set up multer storage to save uploaded files
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/'); // Folder to save uploaded files
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + '-' + file.originalname); // Save file with timestamp and original name
+    }
+});
+
+const upload = multer({ storage: storage });
+
+// Endpoint to handle image evaluation
 router.post('/evaluate-image', upload.single('image'), (req, res) => {
-    const imagePath = path.join(__dirname, '../', req.file.path); // Path to uploaded image
+    if (!req.file) {
+        return res.status(400).json({ error: 'No file uploaded.' });
+    }
 
-    // Run the Python script with the uploaded image
-    const pythonProcess = spawn('python', ['C:/Users/prakh/OneDrive/Desktop/devjams 24/SkillPulse/backend/scripts/cric_stance.py', imagePath]);
+    // Get the path of the uploaded file
+    const filePath = req.file.path;
 
-    pythonProcess.stdout.on('data', (data) => {
-        res.json({ result: data.toString().trim() }); // Trim whitespace
-    });
+    // Here you would add the logic to evaluate the uploaded image.
+    // For demonstration, we'll return a dummy evaluation result.
+    const result = `Evaluation completed for file: ${req.file.originalname} (Path: ${filePath})`;
 
-    pythonProcess.stderr.on('data', (data) => {
-        console.error(`stderr: ${data}`);
-        res.status(500).send('Error in evaluation');
-    });
-
-    pythonProcess.on('error', (error) => {
-        console.error(`Error spawning Python process: ${error}`);
-        res.status(500).send('Internal server error');
-    });
-
-    pythonProcess.on('close', (code) => {
-        if (code !== 0) {
-            console.error(`Python process exited with code: ${code}`);
-            return res.status(500).send('Error in evaluation');
-        }
-    });
+    // Send back the evaluation result
+    res.json({ result });
 });
 
 module.exports = router;
