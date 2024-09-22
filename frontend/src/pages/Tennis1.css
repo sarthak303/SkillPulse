@@ -15,3 +15,15 @@
     margin-top: 2rem; /* Adjust margin to create space below the hero section */
   }
   
+
+  .img{
+    height: auto;
+    width: auto;
+  }
+
+  .myc{
+    display: flex;
+    flex-direction: column;
+            /* Optional: Add some spacing between elements */
+    gap: 10px;
+  }

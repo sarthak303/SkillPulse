@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import {  Routes, Route, useLocation } from "react-router-dom";
 
 // pages & components
 import Home from './pages/Home';
@@ -8,7 +8,6 @@ import Navbar from './components/Navbar';
 import ContactUs from './pages/ContactUs';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Footer from './components/Footer';
 import About from './pages/about';
 import Sports from './pages/Sports'; 
 import Tennis from "./pages/Tennis.js";
@@ -62,9 +61,10 @@ function App() {
           <Route path="/sports" element={<Sports />} />
           <Route path="/sports/cricket" element={<Cricket />} />
           <Route path="/sports/football" element={<Football />} />
-          <Route path="/sports/tennis1" element={<Tennis1 />} />
-          <Route path="/sports/tennis1/tennis" element={<Tennis />} />
+          <Route path="/sports/tennis" element={<Tennis />} />
+          {/* <Route path="/sports/tennis1/tennis" element={<Tennis />} /> */}
           <Route path="/sports/badminton" element={<Badminton />} />
+          <Route path="/sports/basketball" element={<Basketball />} />
 
   </Routes>
       </div>

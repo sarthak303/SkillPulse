@@ -9,17 +9,18 @@ const Tennis1 = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Main Content */}
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="hero-section text-black relative">
-          <img 
-            src="https://i.postimg.cc/6qY2vDtX/tennis.png" 
-            alt="tennis" 
-            className="object-cover w-full h-full absolute top-0 left-0" 
-          />
-
-        </section>
+  {/* Main Content */}
+  <main className="flex-grow">
+    {/* Hero Section */}
+    <section className="hero-section text-black relative w-full h-full">
+      <div className="relative w-full h-full"> {/* Full screen size */}
+        <img
+          src="https://i.postimg.cc/6qY2vDtX/tennis.png"
+          alt="tennis"
+          className="object-cover w-full h-full absolute top-0 left-0"
+        />
+      </div>
+    </section>
 
         {/* Description Section */}
         <section className="container mx-auto px-4 py-12 text-center description-section">
@@ -31,7 +32,7 @@ const Tennis1 = () => {
           </h3>
           
           {/* Description paragraph */}
-          <p className="max-w-2xl mx-auto mb-8 text-black">
+          <p className="max-w-2xl mx-auto mb-8 text-black myc">
             A tennis performance analyser tracks metrics like serve speed, shot accuracy, spin, and movement on the
             court. Advanced AI algorithms analyze a player's technique, footwork, and decision-making
             to help players refine their strokes, improve court positioning, and develop strategies for different

@@ -14,7 +14,7 @@ body {
   margin: 0;
   font-family: "Poppins";
   color: #fff; /* Default text color */
-  overflow: hidden;
+  overflow: scroll;
 }
 
 body.bg-default {
