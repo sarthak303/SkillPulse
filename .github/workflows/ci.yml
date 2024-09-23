@@ -29,7 +29,7 @@ jobs:
         run: gem install bundler
 
       - name: Install dependencies
-        run: bundle install
+        run: bundle install  # This will now work since Gemfile is present
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
