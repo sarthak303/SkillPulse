@@ -20,7 +20,6 @@ SkillPulse is an innovative AI-powered sports performance analyzer designed to e
 
 ### Prerequisites
 - Python 3.x
-- Required libraries (see `requirements.txt`)
 
 ### Installation
 1. Clone the repository:
